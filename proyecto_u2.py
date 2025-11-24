@@ -111,20 +111,18 @@ def validar_nuevo_producto():
     print(f"\n{COLOR_BLUE}--- Validación de Nombre de Producto ---{COLOR_RESET}")
     nombre = input(f"{COLOR_YELLOW}Introduce el nombre del nuevo producto a validar: {COLOR_RESET}")
     
-    errores = []
+    errores = [] #Esto es un recopilador de errores, los errores que se hayan encontrado en "validar_nuevo_producto" se recopilaran aqui
 
     # 1. Regla: Longitud total entre 5 y 20 caracteres
     if not (5 <= len(nombre) <= 20):
         errores.append(f"Longitud inválida (debe ser entre 5-20 caracteres, tiene {len(nombre)}).")
 
     # 2. Regla: Debe empezar con una letra mayúscula (A-Z)
-    # ]
     # ^[A-Z] -> ^ (ancla al inicio) [A-Z] (una letra mayúscula)
     if not re.search(r'^[A-Z]', nombre):
         errores.append("Debe empezar con una letra mayúscula.")
 
     # 3. Regla: Debe contener al menos un dígito (0-9)
-    # 
     # \d -> Busca cualquier dígito en cualquier parte de la cadena
     if not re.search(r'\d', nombre):
         errores.append("Debe contener al menos un dígito.")

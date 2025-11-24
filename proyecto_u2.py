@@ -2,7 +2,7 @@ import re #
 
 
 # Definición de Colores ANSI
-# 
+
 COLOR_RED = '\033[91m'
 COLOR_GREEN = '\033[92m'
 COLOR_YELLOW = '\033[93m'
@@ -119,7 +119,7 @@ def validar_nuevo_producto():
 
     # 2. Regla: Debe empezar con una letra mayúscula (A-Z)
     # ^[A-Z] -> ^ (ancla al inicio) [A-Z] (una letra mayúscula)
-    if not re.search(r'^[A-Z]', nombre):
+    if not re.search(r'^[A-Z]', nombre): #r lo que hace es que python interprete este caracter de escape, indicando que es un raw string, asi evitamos las \
         errores.append("Debe empezar con una letra mayúscula.")
 
     # 3. Regla: Debe contener al menos un dígito (0-9)

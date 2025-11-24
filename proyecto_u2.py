@@ -46,7 +46,7 @@ def buscar_producto_por_id(inventario):
     Muestra los detalles si lo encuentra o un error en rojo
     si no lo ha encontrado
     """
-    print(f"\n{COLOR_BLUE}--- Búsqueda de Producto por ID ---{COLOR_RESET}")
+    print(f"\n{COLOR_BLUE}--- Búsqueda de Producto por ID ---{COLOR_RESET}") #usamos \n para dejar una linea en blanco para que se vea más bonito
     try:
         #Pedimos el ID y lo convertimos a entero
         id_buscar_str = input(f"{COLOR_YELLOW}Introduce el ID del producto a buscar: {COLOR_RESET}")
@@ -64,7 +64,7 @@ def buscar_producto_por_id(inventario):
             print(f"	Nombre: {producto[1]}")#Producto[1] es el nombre
             print(f"	Stock: {producto[2]}")#Producto[2] es el stock
             encontrado = True
-            break#el id es único, podemos detener la búsqueda
+            break#el ID es único, podemos detener la búsqueda
         
     if not encontrado:
         print(f"{COLOR_RED}Error: Producto con ID {id_buscar} no encontrado.{COLOR_RESET}")
